@@ -1,24 +1,33 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { api } from '../Auth/AuthOperations';
 
-export const fetchContacts = createAsyncThunk(
-  'contacts/fetchAll',
-  async contact => {
-    const contacts = await axios.post('/contacts', contact);
-    return contacts;
-  }
-);
 export const addContact = createAsyncThunk(
   'contacts/addContact',
   async contact => {
-    const contacts = await axios.post('/contacts', contact);
-    return contacts;
+    const contacts = await api.post('/contacts', contact);
+    return contacts.data;
+  }
+);
+
+export const fetchContacts = createAsyncThunk(
+  'contacts/fetchAll',
+  async (_, { rejectWithValue }) => {
+    try {
+      const contacts = await api.get('/contacts');
+      return contacts.data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
   }
 );
 export const deleteContact = createAsyncThunk(
-  'contacts/deleteContact',
-  async id => {
-    await axios.delete(`/contacts/contacts/${id}`);
-    return id;
+  'contacts/deletecontact',
+  async (contactId, { rejectWithValue }) => {
+    try {
+      await api.delete(`/contacts/${contactId}`);
+      return contactId;
+    } catch (error) {
+      rejectWithValue(error);
+    }
   }
 );

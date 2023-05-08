@@ -1,13 +1,13 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
-import { filterSlice } from '../../redux/Filter/FilterSlice';
-import { FilterTitle, FilterInput, FilterContainer } from './Filter.styled';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { filterSlice } from '../../redux/Filter/FilterSlice';
+import { FilterTitle,  FilterContainer } from './Filter.styled';
 import { TextField } from '@mui/material';
 
 const Filter = () => {
-  const dispatch = useDispatch();
-  const filter = useSelector(state => state.filter.filter);
+  // const dispatch = useDispatch();
+  // const filter = useSelector(state => state.filter.filter);
   return (
     <FilterContainer>
       <FilterTitle>Find contacts by name</FilterTitle>

@@ -7,7 +7,7 @@ import {
   NavigationItem,
   NavigationLink,
   ContactsLink,
-  UserMenuWrapper
+  UserMenuWrapper,
 } from './Navigation.styled';
 import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/userMenu/UserMenu';
@@ -19,6 +19,9 @@ export const Navigation = () => {
       <NavigationStyled>
         <HeaderNav>
           <NavigationList>
+            <NavigationItem>
+              <ContactsLink to="/">Home</ContactsLink>
+            </NavigationItem>
             {isLoggedIn && (
               <>
                 <NavigationItem>
@@ -33,8 +36,8 @@ export const Navigation = () => {
               <>
                 <NavigationItem>
                   <UserMenuWrapper>
-                  <NavigationLink to="/">Login</NavigationLink>
-                  <NavigationLink to="/register">Register</NavigationLink>
+                    <NavigationLink to="/login">Login</NavigationLink>
+                    <NavigationLink to="/register">Register</NavigationLink>
                   </UserMenuWrapper>
                 </NavigationItem>
               </>
