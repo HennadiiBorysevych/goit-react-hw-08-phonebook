@@ -18,6 +18,9 @@ export const HeaderNav = styled.nav`
 export const NavigationList = styled.ul`
   display: flex;
   width: 100%;
+  justify-content: space-between;
+
+
   align-items: center;
   list-style: none;
 `;
@@ -29,13 +32,6 @@ export const NavigationItem = styled.li`
   color: #000;
   padding: 10px 0;
   margin-right: 20px;
-  cursor: pointer;
-  &:first-of-type {
-    flex-basis: 90%;
-  }
-  &:last-of-type {
-    margin-right: 0;
-  }
   &:hover {
     color: #f00;
   }
@@ -72,4 +68,10 @@ export const ContactsLink = styled(Link)`
             transform: translate(0.05em, 0.05em);
             box-shadow: 0.05em 0.05em;
     }
+`;
+
+export const UserMenuWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+
 `;

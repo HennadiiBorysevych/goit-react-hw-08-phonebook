@@ -1,17 +1,12 @@
 import { useState } from 'react';
-import { addContact } from 'redux/ContactsOperations';
+import { addContact } from 'redux/Contacts/ContactsOperations';
 import { useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
-import {
-  PhoneBookForm,
-  PhoneBookLabel,
-  PhoneBookInput,
-  PhoneBookButton,
-} from './Form.styled';
+import { PhoneBookForm, PhoneBookLabel, PhoneBookButton } from './Form.styled';
+import { TextField } from '@mui/material';
 
 const Form = () => {
   const [name, setName] = useState('');
-  const [phone, setNumber] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
 
   const onInputChange = e => {
@@ -33,7 +28,7 @@ const Form = () => {
 
     const contact = {
       name,
-      phone,
+      number,
     };
 
     dispatch(addContact(contact));
@@ -41,34 +36,30 @@ const Form = () => {
     e.target.reset();
   };
 
-  const nameId = nanoid();
-  const numberId = nanoid();
-
   return (
     <div>
       <PhoneBookForm onSubmit={handleSubmit}>
-        <PhoneBookLabel htmlFor={nameId}>
+        <PhoneBookLabel>
           Name
-          <PhoneBookInput
-            id={nameId}
+          <TextField
             onChange={onInputChange}
+            required
             type="text"
             name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+            label="John Smith"
+            variant="filled"
           />
         </PhoneBookLabel>
-        <PhoneBookLabel htmlFor={numberId}>
+        <PhoneBookLabel>
           Number
-          <PhoneBookInput
-            id={numberId}
+          <TextField
             onChange={onInputChange}
-            type="tel"
-            name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+
             required
+            type="text"
+            name="number"
+            label="+38(0__)___-__-__"
+            variant="filled"
           />
         </PhoneBookLabel>
         <PhoneBookButton type="submit">Add Contact</PhoneBookButton>

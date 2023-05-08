@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 
 export const FilterTitle = styled.label`
   text-aligh: left;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weigth: 500;
+  color: #fff;
 `;
 export const FilterInput = styled.input`
   width: 600px;

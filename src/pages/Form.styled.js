@@ -1,7 +1,6 @@
-import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import styled from "@emotion/styled";
 
-export const LoginStyled = styled.div`
+export const WrapperStyled = styled.div`
   background: #fff;
   width: 500px;
   margin: 65px auto;
@@ -14,18 +13,18 @@ export const LoginStyled = styled.div`
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 `;
 
-export const LoginTitle = styled.h1`
+export const FormTitle = styled.h1`
   padding: 35px 35px 0 35px;
   font-weight: 300;
 `;
-export const LoginContent = styled.div`
+export const FormContent = styled.div`
     padding: 35px;
     text-align: center;
 `;
-export const LoginLabel = styled.label`
+export const FormLabel = styled.label`
     padding: 12px 5px;
 `;
-export const LoginInput = styled.input`
+export const FormInput = styled.input`
     font-size: 16px;
     display: block;
     font-family: 'Rubik', sans-serif;
@@ -51,29 +50,7 @@ export const Buttons = styled.div`
     -webkit-box-direction: normal;
             flex-direction: row;
 `;
-export const LoginButton = styled.button`
-    width: 100%;
-    border: none;
-    padding: 18px;
-    font-family: 'Rubik', sans-serif;
-    cursor: pointer;
-    text-transform: uppercase;
-    background: #e8e9ec;
-    color: #777;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 0;
-    letter-spacing: 0.2px;
-    outline: 0;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    &:hover {
-        background: #d5d6d9;
-    }
-    &:active {
-        background: #c4c5c8;
-    }
-`;
-export const RegisterButton = styled.button`
+export const SubmitButton = styled.button`
     width: 100%;
     border: none;
     padding: 18px;

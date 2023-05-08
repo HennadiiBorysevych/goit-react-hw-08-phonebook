@@ -14,6 +14,7 @@ export const PhoneBookLabel = styled.label`
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
+  color: #fff;
   box-sizing: border-box;
   gap: 10px;
   font-size: 20px;
@@ -33,18 +34,21 @@ export const PhoneBookInput = styled.input`
   }
 `;
 export const PhoneBookButton = styled.button`
-  padding: 20px;
-  box-sizing: border-box;
-  font-size: 20px;
-  font-weight: 500;
-  border: 1px solid #000;
-  border-radius: 5px;
-  outline: none;
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-  &:hover {
-    background-color: #fff;
-    color: #000;
-  }
+background: #FBCA1F;
+font-family: inherit;
+color: #000;
+padding: 0.6em 1.3em;
+font-weight: 900;
+font-size: 18px;
+border: 3px solid black;
+border-radius: 0.4em;
+box-shadow: 0.1em 0.1em;
+&:hover {
+        transform: translate(-0.05em, -0.05em);
+        box-shadow: 0.15em 0.15em;
+}
+&:active {
+        transform: translate(0.05em, 0.05em);
+        box-shadow: 0.05em 0.05em;
+}  
 `;
