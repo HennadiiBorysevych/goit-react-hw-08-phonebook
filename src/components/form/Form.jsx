@@ -48,13 +48,21 @@ const Form = () => {
             name="name"
             label="John Smith"
             variant="filled"
+            InputLabelProps={{
+              style: { color: '#fbcf1f' },
+            }}
           />
         </PhoneBookLabel>
         <PhoneBookLabel>
           Number
           <TextField
             onChange={onInputChange}
-
+            InputLabelProps={{
+              style: { color: '#fbcf1f' },
+            }}
+            InputProps={{
+              style: { borderBottomColor: '#fbcf1f' },
+            }}
             required
             type="text"
             name="number"

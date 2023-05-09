@@ -3,7 +3,7 @@ export const ContactsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 10px;
   border: 1px solid #000;
   border-radius: 5px;
   width: 300px;
@@ -14,15 +14,13 @@ export const ContactsContainer = styled.div`
 export const ContactsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
-  gap: 10px;
+  gap: 20px;
 `;
 
 export const ContactsItem = styled.li`
-  padding: 10px;
   display: flex;
-  justify-content: space-between;
   font-size: 16px;
   &:hover {
     background-color: #fbcf1f;
