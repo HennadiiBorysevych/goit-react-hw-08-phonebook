@@ -31,10 +31,6 @@ export const NavigationItem = styled.li`
   &:hover {
     color: #f00;
   }
-  &:nth-of-type(2) {
-    flex-basis: 64%;
-  }
-
 `;
 export const NavigationLink = styled(Link)`
   background: #fbca1f;
@@ -69,6 +65,9 @@ export const ContactsLink = styled(Link)`
   &:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
+  }
+  &:first-of-type {
+    margin-right: 15px;
   }
 `;
 

@@ -1,11 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { NavigationLink,InfoWrapper } from './UserMenu.styled';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/Auth/AuthOperations';
+import { useSelectors } from 'components/hooks/UseSelector';
+
 
 export const UserMenu = () => {
-  const name = useSelector(state => state.auth.user.name);
+
+  const {userName} = useSelectors();
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -14,7 +16,7 @@ export const UserMenu = () => {
 
   return (
     <InfoWrapper>
-      <p>Welcome, {name}</p>
+      <p>Welcome, {userName}</p>
       <NavigationLink onClick={handleLogout}>Logout</NavigationLink>
     </InfoWrapper>
   );

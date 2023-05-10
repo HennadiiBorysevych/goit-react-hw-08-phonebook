@@ -9,22 +9,21 @@ import {
   ContactsLink,
   UserMenuWrapper,
 } from './Navigation.styled';
-import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/userMenu/UserMenu';
+import { useSelectors } from 'components/hooks/UseSelector';
+
 export const Navigation = () => {
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const { isLoggedIn } = useSelectors();
 
   return (
     <>
       <NavigationStyled>
         <HeaderNav>
           <NavigationList>
-            <NavigationItem>
-              <ContactsLink to="/">Home</ContactsLink>
-            </NavigationItem>
             {isLoggedIn && (
               <>
                 <NavigationItem>
+                  <ContactsLink to="/">Home</ContactsLink>
                   <ContactsLink to="/contacts">Contacts</ContactsLink>
                 </NavigationItem>
                 <NavigationItem>
@@ -34,6 +33,9 @@ export const Navigation = () => {
             )}
             {!isLoggedIn && (
               <>
+                <NavigationItem>
+                  <ContactsLink to="/">Home</ContactsLink>
+                </NavigationItem>
                 <NavigationItem>
                   <UserMenuWrapper>
                     <NavigationLink to="/login">Login</NavigationLink>

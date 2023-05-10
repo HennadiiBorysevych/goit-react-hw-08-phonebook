@@ -4,8 +4,7 @@ import {
   fetchContacts,
   deleteContact,
 } from '../../redux/Contacts/ContactsOperations';
-import { selectContacts, selectFilter,isLogged } from '../../redux/Selectors';
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import Notification from './notafication/Notafication';
 import {
   Span,
@@ -14,12 +13,11 @@ import {
   ContactsItem,
   Button,
 } from './Contacts.styled';
+import { useSelectors } from '../hooks/UseSelector';
 
 const Contact = () => {
+  const { contacts, filter, isLoggedIn } = useSelectors();
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const isLoggedIn = useSelector(isLogged);
-  const filter = useSelector(selectFilter);
 
   useEffect(() => {
     dispatch(fetchContacts());

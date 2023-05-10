@@ -1,14 +1,11 @@
-import { Navigation } from './navigation/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Login } from 'pages/Login';
-import { Register } from 'pages/Register';
-import { Contacts } from 'pages/Contacts';
+import { Navigation } from './navigation/Navigation';
+import { Register,Contacts,Login,Home } from 'pages';
 import { getUser } from 'redux/Auth/AuthOperations';
 import { useEffect } from 'react';
-import { PublicRoute } from 'components/Routes/PublicRoute';
-import { PrivateRoute } from 'components/Routes/PrivateRoute';
-import { Home } from 'pages/Home';
+import { PublicRoute,PrivateRoute } from 'components/Routes';
+
 const App = () => {
   const dispatch = useDispatch();
 
