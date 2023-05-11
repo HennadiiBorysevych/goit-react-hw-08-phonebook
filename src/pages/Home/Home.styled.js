@@ -19,7 +19,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  
   @media screen and (max-width: 767px) {
     max-width: 400px;
     height: fit-content;

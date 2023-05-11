@@ -22,7 +22,10 @@ export const ContactsList = styled.ul`
 export const ContactsItem = styled.li`
   display: flex;
   font-size: 16px;
+  padding: 10px;
+  transition: all 250ms linear;
   &:hover {
+    transform: scale(1.1);
     background-color: #fbcf1f;
     border-radius: 5px;
 
@@ -40,6 +43,7 @@ export const Button = styled.button`
   font-size: 18px;
   border: 3px solid black;
   border-radius: 0.4em;
+  cursor: pointer;
   box-shadow: 0.1em 0.1em;
   &:hover {
     transform: translate(-0.05em, -0.05em);

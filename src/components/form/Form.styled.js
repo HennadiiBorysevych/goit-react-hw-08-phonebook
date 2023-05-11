@@ -6,8 +6,14 @@ export const PhoneBookForm = styled.form`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 5px solid #fbcf1f;
+  border-radius: 5px;
+  box-shadow: 0.5em 0.5em ;
+
 `;
 export const PhoneBookLabel = styled.label`
   display: flex;
@@ -19,6 +25,7 @@ export const PhoneBookLabel = styled.label`
   gap: 10px;
   font-size: 20px;
   font-weight: 700;
+  width: 100%;
 `;
 export const PhoneBookInput = styled.input`
   width: 100%;
@@ -42,6 +49,7 @@ font-weight: 900;
 font-size: 18px;
 border: 3px solid black;
 border-radius: 0.4em;
+cursor : pointer;
 box-shadow: 0.1em 0.1em;
 &:hover {
         transform: translate(-0.05em, -0.05em);

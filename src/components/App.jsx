@@ -30,7 +30,14 @@ const App = () => {
                 </PublicRoute>
               }
             />
-            <Route path="register" element={<Register />} />
+            <Route
+              path="register"
+              element={
+                <PublicRoute>
+                  <Register />
+                </PublicRoute>
+              }
+            />
             <Route
               path="contacts"
               element={

@@ -51,6 +51,7 @@ const Form = () => {
             InputLabelProps={{
               style: { color: '#fbcf1f' },
             }}
+            fullWidth
           />
         </PhoneBookLabel>
         <PhoneBookLabel>
@@ -58,11 +59,11 @@ const Form = () => {
           <TextField
             onChange={onInputChange}
             InputLabelProps={{
-              style: { color: '#fbcf1f' },
+              style: {
+                color: '#fbcf1f',
+              },
             }}
-            InputProps={{
-              style: { borderBottomColor: '#fbcf1f' },
-            }}
+            fullWidth
             required
             type="text"
             name="number"
