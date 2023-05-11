@@ -32,22 +32,33 @@ export const ContactsItem = styled.li`
   }
 `;
 export const Button = styled.button`
-background: #FBCA1F;
-font-family: inherit;
-color: #000;
-padding: 0.6em 1.3em;
-font-weight: 900;
-font-size: 18px;
-border: 3px solid black;
-border-radius: 0.4em;
-box-shadow: 0.1em 0.1em;
-&:hover {
-        transform: translate(-0.05em, -0.05em);
-        box-shadow: 0.15em 0.15em;
-}
-&:active {
-        transform: translate(0.05em, 0.05em);
-        box-shadow: 0.05em 0.05em;
+  background: #fbca1f;
+  font-family: inherit;
+  color: #000;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  &:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+  }
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid black;
+    padding: 0.4em 1em;
+
+    text-align: center;
+    color: #000;
+    font-family: inherit;
+  }
 `;
 
 export const Span = styled.span`

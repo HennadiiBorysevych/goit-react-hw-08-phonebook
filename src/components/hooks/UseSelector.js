@@ -6,5 +6,6 @@ export const useSelectors = () => {
     const token = useSelector(state => state.auth.token);
     const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
     const userName = useSelector(state => state.auth.user.name);
-    return { contacts, filter, token, isLoggedIn, userName };
+    const isFetchingCurrentUser = useSelector(state => state.auth.isFetchingCurrentUser);
+    return { contacts, filter, token, isLoggedIn, userName,isFetchingCurrentUser };
 }

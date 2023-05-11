@@ -11,6 +11,11 @@ export const WrapperStyled = styled.div`
   flex-direction: column;
   border-radius: 4px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 767px) {
+    max-width: 300px;
+    padding: 10px;
+  }
 `;
 
 export const FormTitle = styled.h1`

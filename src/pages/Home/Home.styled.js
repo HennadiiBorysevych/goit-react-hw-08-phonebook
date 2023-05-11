@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const HomeContainer = styled.div`
-  background: #FBCA1F;
+  background: #fbca1f;
   max-width: 700px;
   height: 300px;
   position: absolute;
@@ -17,6 +17,24 @@ export const HomeContainer = styled.div`
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   display: flex;
-    flex-direction: column;
-    gap: 20px;
-}`;
+  flex-direction: column;
+  gap: 20px;
+
+  @media screen and (max-width: 767px) {
+    max-width: 400px;
+    height: fit-content;
+    top: 59%;
+  }
+`;
+
+export const Content = styled.p`
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000;
+    font-family: inherit;
+  }
+`;

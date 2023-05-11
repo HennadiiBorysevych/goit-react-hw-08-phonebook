@@ -21,6 +21,9 @@ export const NavigationList = styled.ul`
   align-items: center;
   list-style: none;
   padding: 0 20px;
+  @media screen and (max-width: 767px) {
+    padding: 10px 10px;
+  }
 `;
 export const NavigationItem = styled.li`
   text-transform: uppercase;
@@ -31,6 +34,12 @@ export const NavigationItem = styled.li`
   &:hover {
     color: #f00;
   }
+  @media screen and (max-width: 767px) {
+    &:first-of-type {
+      display: flex;
+      gap: 5px;
+      margin-right: 0;
+    }
 `;
 export const NavigationLink = styled(Link)`
   background: #fbca1f;
@@ -50,6 +59,16 @@ export const NavigationLink = styled(Link)`
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid black;
+    padding: 0.4em 1em;
+
+    text-align: center;
+    color: #000;
+    font-family: inherit;
+  }
 `;
 export const ContactsLink = styled(Link)`
   color: #000;
@@ -68,6 +87,18 @@ export const ContactsLink = styled(Link)`
   }
   &:first-of-type {
     margin-right: 15px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #000;
+    font-family: inherit;
+    &:first-of-type {
+      margin-right: 0;
+    }
   }
 `;
 

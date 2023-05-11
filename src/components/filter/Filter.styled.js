@@ -23,4 +23,8 @@ export const FilterContainer = styled.div`
   width: 600px;
   margin: 0 auto;
   margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 `;

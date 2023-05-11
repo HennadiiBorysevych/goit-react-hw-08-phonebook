@@ -51,4 +51,14 @@ box-shadow: 0.1em 0.1em;
         transform: translate(0.05em, 0.05em);
         box-shadow: 0.05em 0.05em;
 }  
+@media screen and (max-width: 767px) {
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid black;
+padding: 0.4em 1.0em;
+  
+  text-align: center;
+  color: #000;
+  font-family: inherit;
+  }
 `;

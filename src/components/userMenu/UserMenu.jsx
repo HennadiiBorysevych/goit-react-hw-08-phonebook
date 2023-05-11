@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationLink,InfoWrapper } from './UserMenu.styled';
+import { NavigationLink,InfoWrapper,UserName } from './UserMenu.styled';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/Auth/AuthOperations';
 import { useSelectors } from 'components/hooks/UseSelector';
@@ -16,7 +16,7 @@ export const UserMenu = () => {
 
   return (
     <InfoWrapper>
-      <p>Welcome, {userName}</p>
+      <UserName>Welcome, {userName}</UserName>
       <NavigationLink onClick={handleLogout}>Logout</NavigationLink>
     </InfoWrapper>
   );
