@@ -6,7 +6,7 @@ export const PublicRoute = ({ children }) => {
   const { isLoggedIn } = useSelectors();
   
   if (isLoggedIn ) {
-    return <Navigate to="/contacts" />;
+    return <Navigate to="/contacts" replace />;
   }
   return children;
 };

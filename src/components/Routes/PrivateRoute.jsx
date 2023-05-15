@@ -5,7 +5,7 @@ import { useSelectors } from 'components/hooks/UseSelector';
 export const PrivateRoute = ({ children }) => {
   const { isLoggedIn } = useSelectors();
   if (!isLoggedIn  ) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/login" replace/>;
   }
   return children;
 };
