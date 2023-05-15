@@ -12,7 +12,7 @@ import {
 import { signIn } from 'redux/Auth/AuthOperations';
 import {  useDispatch } from 'react-redux';
 
-export const Login = () => {
+const Login = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -43,3 +43,4 @@ export const Login = () => {
     </WrapperStyled>
   );
 };
+export default Login;

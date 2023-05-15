@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Title, Contact, Filter } from '../components';
 
-export const Contacts = () => {
+const Contacts = () => {
   return (
     <>
       <Form />
@@ -12,3 +12,4 @@ export const Contacts = () => {
   );
 };
 
+export default Contacts;

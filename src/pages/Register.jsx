@@ -14,7 +14,7 @@ import {
 import { signUp } from 'redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
 
-export const Register = () => {
+ const Register = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -69,3 +69,5 @@ export const Register = () => {
     </WrapperStyled>
   );
 };
+
+export default Register;

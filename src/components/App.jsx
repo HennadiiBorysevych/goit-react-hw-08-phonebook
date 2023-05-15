@@ -1,12 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { lazy } from 'react';
 import { Navigation } from './navigation/Navigation';
-import { Register, Contacts, Login, Home } from 'pages';
 import { getUser } from 'redux/Auth/AuthOperations';
 import { useEffect } from 'react';
 import { PublicRoute, PrivateRoute } from 'components/Routes';
 import { useSelectors } from 'components/hooks/UseSelector';
 import { LineWave } from 'react-loader-spinner';
+
+const Contacts = lazy(() => import('../pages/Contacts'));
+const Register = lazy(() => import('../pages/Register'));
+const Login = lazy(() => import('../pages/Login'));
+const Home = lazy(() => import('../pages/Home/Home'));
 
 const App = () => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { HomeContainer,Content } from './Home.styled';
 import { FaAddressBook, FaHandsHelping, FaSmileWink } from 'react-icons/fa';
-export const Home = () => {
+const Home = () => {
   return (
     <HomeContainer>
       <Content>
@@ -24,3 +24,4 @@ export const Home = () => {
     </HomeContainer>
   );
 };
+export default Home;
