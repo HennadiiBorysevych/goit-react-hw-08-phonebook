@@ -1,5 +1,6 @@
-import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import React, { useState } from 'react';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   WrapperStyled,
@@ -8,64 +9,87 @@ import {
   SubmitButton,
   FormTitle,
   FormLabel,
+  FormError,
   FormInput,
 } from './Form.styled';
 
 import { signUp } from 'redux/Auth/AuthOperations';
 import { useDispatch } from 'react-redux';
 
- const Register = () => {
+const validationSchema = Yup.object({
+  name: Yup.string()
+    .min(8)
+    .max(50)
+    .required('must consist of two words separated by a space'),
+  email: Yup.string().email().required(),
+  password: Yup.string()
+    .min(7)
+    .max(16)
+    .required('must be at least 7 characters'),
+});
+
+const initialValues = {
+  name: '',
+  email: '',
+  password: '',
+};
+
+const Register = () => {
   const dispatch = useDispatch();
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    const userInfo = {
-      name: e.target[0].value,
-      email: e.target[1].value,
-      password: e.target[2].value,
-    };
-
-    const passwordRegex = /^.{7,}$/;
-    const fullNameRegex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
-
-    const isPasswordValid = passwordRegex.test(userInfo.password);
-    const isFullNameValid = fullNameRegex.test(userInfo.name);
-
-    if (!isPasswordValid) {
-      toast.info('Password must be at least 7 digits');
-      return;
-    }
-
-    if (!isFullNameValid) {
-      toast.error('Full name must consist of 2 words separated by a space');
-      return;
-    }
-
-    dispatch(signUp(userInfo));
-    e.target.reset();
+  const handleSubmit = (value, { resetForm }) => {
+    resetForm();
+    dispatch(signUp(value));
   };
 
   return (
     <WrapperStyled>
-      <form onSubmit={handleSubmit} autoComplete="on">
-        <FormTitle>Sign Up</FormTitle>
-        <FormContent>
-          <FormLabel>
-            <FormInput type="text" placeholder="Full Name" />
-          </FormLabel>
-          <FormLabel>
-            <FormInput type="email" placeholder="Email" />
-          </FormLabel>
-          <FormLabel>
-            <FormInput type="password" placeholder="Password" />
-          </FormLabel>
-        </FormContent>
-        <Buttons>
-          <SubmitButton type="submit">Sign Up</SubmitButton>
-        </Buttons>
-      </form>
-      <ToastContainer />
+      <Formik
+        onSubmit={handleSubmit}
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+      >
+        {({ isValid }) => (
+          <Form autoComplete="off">
+            <FormTitle>Sign Up</FormTitle>
+            <FormContent>
+              <FormLabel>
+                <FormInput
+                  isvalid={isValid.toString()}
+                  type="text"
+                  name="name"
+                  placeholder="Full name"
+                />
+                <FormError name="name" component="p" />
+              </FormLabel>
+              <FormLabel>
+                <FormInput
+                  isvalid={isValid.toString()}
+
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+                <FormError name="email" component="p" />
+              </FormLabel>
+              <FormLabel>
+                <FormInput
+                  isvalid={isValid.toString()}
+
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                />
+                <FormError name="password" component="p" />
+              </FormLabel>
+            </FormContent>
+            <Buttons>
+              <SubmitButton type="submit" disabled={!isValid}>
+                Sign Up
+              </SubmitButton>
+            </Buttons>
+          </Form>
+        )}
+      </Formik>
     </WrapperStyled>
   );
 };

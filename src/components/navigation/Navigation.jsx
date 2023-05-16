@@ -1,5 +1,7 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import { LineWave } from 'react-loader-spinner';
+
 import {
   NavigationStyled,
   NavigationList,
@@ -48,7 +50,18 @@ export const Navigation = () => {
         </HeaderNav>
       </NavigationStyled>
       <main>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={        <LineWave
+          height="200"
+          width="200"
+          color="#FBCA1F"
+          ariaLabel="line-wave"
+          wrapperStyle={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />}>
           <Outlet />
         </Suspense>
       </main>
