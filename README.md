@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phonebook - README</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin-bottom: 10px;
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    li {
-      margin-bottom: 5px;
-    }
-  </style>
-</head>
-
 <body>
   <h1>Phonebook</h1>
 
@@ -122,5 +77,3 @@
     <!-- Add any other acknowledgments or credits if necessary -->
   </ul>
 </body>
-
-</html>
