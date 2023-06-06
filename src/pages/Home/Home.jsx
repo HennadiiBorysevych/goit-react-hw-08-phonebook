@@ -1,16 +1,15 @@
 import React from 'react';
 import { HomeContainer,Content } from './Home.styled';
-import { FaAddressBook, FaHandsHelping, FaSmileWink } from 'react-icons/fa';
 const Home = () => {
   return (
     <HomeContainer>
       <Content>
         {' '}
-        Hi there... <FaHandsHelping />
+        Hi there... ✌
       </Content>
       <Content>
         Welcome to PhoneBook!
-        <FaAddressBook />
+        📙
       </Content>
       <Content>
         Say goodbye to the hassle of managing your contacts. With PhoneBook, you
@@ -19,7 +18,7 @@ const Home = () => {
         busy bee or a social butterfly, PhoneBook has got you covered.
       </Content>
       <Content>
-        Sign up now and start organizing your contacts like a pro! <FaSmileWink />
+        Sign up now and start organizing your contacts like a pro! 😉
       </Content>
     </HomeContainer>
   );

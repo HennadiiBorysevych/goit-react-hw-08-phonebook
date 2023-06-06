@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-
 export const HomeContainer = styled.div`
   background: #fbca1f;
   max-width: 700px;
@@ -19,7 +18,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
+
   @media screen and (max-width: 767px) {
     max-width: 400px;
     height: fit-content;
@@ -28,6 +27,7 @@ export const HomeContainer = styled.div`
 `;
 
 export const Content = styled.p`
+  font-family: 'Indie Flower', cursive;
   @media screen and (max-width: 767px) {
     font-size: 14px;
     font-weight: 400;
